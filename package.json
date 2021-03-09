@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": ""
+    "start": "",
+    "build1": "webpack --config webpack1.config.js"
   },
   "repository": {
     "type": "git",
@@ -18,6 +19,8 @@
   },
   "homepage": "https://github.com/WhatProblem/webpack5#readme",
   "devDependencies": {
-    "webpack": "^5.24.4"
+    "myLoader": "file:myLoader",
+    "webpack": "^5.24.4",
+    "webpack-cli": "^4.5.0"
   }
 }
