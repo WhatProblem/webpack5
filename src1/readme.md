@@ -1,4 +1,4 @@
-### 自定义loader、plugins
+### webpack5 自定义 loader、plugins
 
 1. 自定义loader文件：myLoader/index.js, 执行命令 npm install ./myloader -D 安装自定义loader，在rules中进行配置
 
