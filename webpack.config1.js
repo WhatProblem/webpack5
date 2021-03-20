@@ -1,3 +1,4 @@
+// 自定义loader、plugin
 const path = require('path')
 const ConsoleLogOnBuildWebpackPlugin = require('./myPlugin/myPlugin')
 

@@ -19,7 +19,17 @@
   },
   "homepage": "https://github.com/WhatProblem/webpack5#readme",
   "devDependencies": {
+    "css-loader": "^5.1.3",
+    "file-loader": "^6.2.0",
+    "html-loader": "^2.1.2",
+    "html-webpack-plugin": "^5.3.1",
+    "less": "^4.1.1",
+    "less-loader": "^8.0.0",
+    "mini-css-extract-plugin": "^1.3.9",
     "myLoader": "file:myLoader",
+    "postcss-loader": "^5.2.0",
+    "style-loader": "^2.0.0",
+    "url-loader": "^4.1.1",
     "webpack": "^5.24.4",
     "webpack-cli": "^4.5.0"
   }
