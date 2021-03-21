@@ -15,7 +15,9 @@ module.exports = {
 	entry: './src9/index.js',
 	output: {
 		filename: 'js/build.js',
-		path: resolve(__dirname, 'build')
+		path: resolve(__dirname, 'build'),
+		// 打包之前清理文件
+		clean: true
 	},
 	module: {
 		rules: [
@@ -24,7 +26,13 @@ module.exports = {
 				use: [
 					// 'style-loader', 
 					// 提出css到link标签中
-					MiniCssExtractPlugin.loader,
+					{
+						loader: MiniCssExtractPlugin.loader,
+						options: {
+							// 解决打包后css文件路径问题
+							publicPath: '../'
+						}
+					},
 					'css-loader'
 				]
 			},
@@ -32,7 +40,14 @@ module.exports = {
 				test: /\.less$/,
 				use: [
 					// 'style-loader', 
-					MiniCssExtractPlugin.loader,
+					// 提出css到link标签中
+					{
+						loader: MiniCssExtractPlugin.loader,
+						options: {
+							// 解决打包后css文件路径问题
+							publicPath: '../'
+						}
+					},
 					'css-loader', 
 					'less-loader'
 				]
@@ -72,7 +87,8 @@ module.exports = {
 		new HtmlWebpackPlugin({ template: './src9/public/index.html' }),
 		new MiniCssExtractPlugin({
 			// 重命名输入css文件
-			filename: 'css/build.css'
+			filename: 'css/[name].[contenthash].css',
+			chunkFilename: '[id].[contenthash].css'
 		})
 	]
 }
