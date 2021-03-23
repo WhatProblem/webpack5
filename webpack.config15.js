@@ -9,8 +9,9 @@ const { resolve } = require('path')
 // process.env.NODE_ENV = 'development'
 
 module.exports = {
-	// mode: 'development',
-	mode: 'production',
+	target: process.env.NODE_ENV === 'production' ? 'browserslist' : 'web',
+	mode: 'development',
+	// mode: 'production',
 	devServer: {
 		contentBase: resolve(__dirname, 'build'),
 		// 开启gzip压缩，打包后代码体积更小
